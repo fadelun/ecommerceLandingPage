@@ -3,7 +3,6 @@ import logo from "../../images/logo.svg";
 import CloseIcon from "../../images/icon-close.svg";
 import MenuIcon from "../../images/icon-menu.svg";
 import { Link } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
 
 const LeftNav = () => {
   const [navbar, setNavbar] = useState(true);

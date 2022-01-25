@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import imgProduct01 from "../images/image-product-1.jpg";
 import imgProduct02 from "../images/image-product-2.jpg";
 import imgProduct03 from "../images/image-product-3.jpg";
@@ -12,8 +12,8 @@ const Modal = ({ handleClose, setCarousel, carousel, setBorderTmbn, borderTmbn }
   const images = [imgProduct01, imgProduct02, imgProduct03, imgProduct04];
   const thumbs = [thmb01, thmb02, thmb03, thmb04];
 
-  const showImage = images.filter((img, i) => i + 1 == carousel);
-  const border = thumbs.filter((tmb, i) => i + 1 == carousel);
+  const showImage = images.filter((img, i) => i + 1 === carousel);
+  const border = thumbs.filter((tmb, i) => i + 1 === carousel);
 
   const outline = ["outline-transparent", "outline-primary-1"];
 
@@ -42,7 +42,7 @@ const Modal = ({ handleClose, setCarousel, carousel, setBorderTmbn, borderTmbn }
     const list = document.querySelectorAll(".modal ul li");
 
     [...list].map((li, i) => {
-      if (e.target == li.firstElementChild) {
+      if (e.target === li.firstElementChild) {
         setCarousel(i + 1);
         setBorderTmbn(i + 1);
       }
@@ -86,8 +86,7 @@ const Modal = ({ handleClose, setCarousel, carousel, setBorderTmbn, borderTmbn }
               }
             })}
         </ul>
-        <p>{carousel}</p>
-        <p>{borderTmbn}</p>
+
         <button onClick={handleClose} className="close group absolute right-0 -top-6">
           <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" className="fill-white-2 group-hover:fill-primary-1">
             <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fillRule="evenodd" />

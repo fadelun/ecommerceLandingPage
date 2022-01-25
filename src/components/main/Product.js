@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import imgProduct01 from "../../images/image-product-1.jpg";
 import imgProduct02 from "../../images/image-product-2.jpg";
 import imgProduct03 from "../../images/image-product-3.jpg";
@@ -12,13 +11,13 @@ const Product = ({ setShowModal, setBorderTmbn, setCarousel, carousel, borderTmb
   const images = [imgProduct01, imgProduct02, imgProduct03, imgProduct04];
   const thumbs = [thmb01, thmb02, thmb03, thmb04];
 
-  const showImage = images.filter((img, i) => i + 1 == carousel);
+  const showImage = images.filter((img, i) => i + 1 === carousel);
 
   const handleClick = (e) => {
     const list = document.querySelectorAll(".product ul li");
 
     [...list].map((li, i) => {
-      if (e.target == li.firstElementChild) {
+      if (e.target === li.firstElementChild) {
         setShowModal(true);
         setCarousel(i + 1);
         setBorderTmbn(i + 1);
@@ -55,7 +54,7 @@ const Product = ({ setShowModal, setBorderTmbn, setCarousel, carousel, borderTmb
         {thumbs &&
           thumbs.map((thmb, i) => {
             return (
-              <li onClick={handleClick} className="cursor-pointer group outline rounded-lg overflow-hidden outline-transparent active:outline-primary-1 outline-2 w-1/5">
+              <li onClick={handleClick} key={i} className="cursor-pointer group outline rounded-lg overflow-hidden outline-transparent active:outline-primary-1 outline-2 w-1/5">
                 <img src={thmb} alt={`thumbnail-${i}`} className="tmbn rounded-lg group-hover:opacity-30" />
               </li>
             );

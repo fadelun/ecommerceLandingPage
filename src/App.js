@@ -29,9 +29,6 @@ function App() {
     if (e.target.classList.contains("icon-cart")) {
       cartModal.classList.toggle("hidden");
     }
-    //  else if (!e.target.parentNode.classList.contains("cart-modal") && !e.target.parentNode.parentNode.classList.contains("cart-modal")) {
-    //   cartModal.classList.add("hidden");
-    // }
   };
 
   const handleClick = (e) => {
